@@ -115,7 +115,6 @@ const (
 	Intense       ActivityType = "intense"       // Duration of intense activities (in seconds).
 	Active        ActivityType = "active"        // Sum of intense and moderate activity durations (in seconds).
 	Calories      ActivityType = "calories"      // Active calories burned (in Kcal).
-	TotalCalories ActivityType = "totalcalories" // Total calories burned (in Kcal).
 	HrAverage     ActivityType = "hr_average"    // Average heart rate.
 	HrMin         ActivityType = "hr_min"        // Minimal heart rate.
 	HrMax         ActivityType = "hr_max"        // Maximal heart rate.
