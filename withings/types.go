@@ -31,6 +31,19 @@ type SerialzedMeas struct {
 	BoneMasses     []MeasureData
 	PWaveVel       []MeasureData
 	VO2s           []MeasureData
+	QRS_ECG  	   []MeasureData
+	PR__ECG  	   []MeasureData
+	QT__ECG  	   []MeasureData
+	CorQT_ECG  	   []MeasureData
+	AtrFibPPG  	   []MeasureData
+	VasAge  	   []MeasureData
+	NervHea  	   []MeasureData
+	ExtrH2o  	   []MeasureData
+	IntrH2o  	   []MeasureData
+	VisFat  	   []MeasureData
+	FatMassSeg     []MeasureData
+	MusMassSeg     []]MeasureData
+	EDAfeet  	   []MeasureData
 	UnknowVals     []MeasureData
 }
 
@@ -84,7 +97,7 @@ type Activities struct {
 			Active        int     `json:"active"`
 			Calories      float64 `json:"calories"`
 			Totalcalories int     `json:"totalcalories"`
-			HrAverage     int     `json:"hr_average"`
+			HrAverage     float64 `json:"hr_average"`
 			HrMin         int     `json:"hr_min"`
 			HrMax         int     `json:"hr_max"`
 			HrZone0       int     `json:"hr_zone_0"`
