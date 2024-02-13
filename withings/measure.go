@@ -218,6 +218,32 @@ func SerialMeas(mym *Measurement) (*SerialzedMeas, error) {
 				sm.PWaveVel = append(sm.PWaveVel, val)
 			case int(VO2):
 				sm.VO2s = append(sm.VO2s, val)
+			case int(QRS_ECG):
+				sm.QRS_ECG = append(sm.QRS_ECG, val)
+			case int(PR__ECG):
+				sm.PR__ECG = append(sm.PR__ECG, val)
+			case int(QT__ECG):
+				sm.QT__ECG = append(sm.QT__ECG, val)
+			case int(CorQT_ECG):
+				sm.CorQT_ECG = append(sm.CorQT_ECG, val)
+			case int(AtrFibPPG):
+				sm.AtrFibPPG = append(sm.AtrFibPPG, val)
+			case int(VasAge):
+				sm.VasAge = append(sm.VasAge, val)
+			case int(NervHea):
+				sm.NervHea = append(sm.NervHea, val)
+			case int(ExtrH2o):
+				sm.ExtrH2o = append(sm.ExtrH2o, val)
+			case int(IntrH2o):
+				sm.IntrH2o = append(sm.IntrH2o, val)
+			case int(VisFat):
+				sm.VisFat = append(sm.VisFat, val)
+			case int(FatMassSeg):
+				sm.FatMassSeg = append(sm.FatMassSeg, val)
+			case int(MusMassSeg):
+				sm.MusMassSeg = append(sm.MusMassSeg, val)
+			case int(EDAfeet):
+				sm.EDAfeet = append(sm.EDAfeet, val)
 			default:
 				sm.UnknowVals = append(sm.UnknowVals, val)
 			}

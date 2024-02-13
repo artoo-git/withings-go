@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/zono-dev/withings-go/withings"
+	"github.com/artoo-git/withings-go/withings"
 )
 
 const (
