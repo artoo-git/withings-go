@@ -76,7 +76,7 @@ type Activities struct {
 			Brand         int     `json:"brand"`
 			IsTracker     bool    `json:"is_tracker"`
 			Steps         int     `json:"steps"`
-			Distance      int     `json:"distance"`
+			Distance      float64 `json:"distance"`
 			Elevation     int     `json:"elevation"`
 			Soft          int     `json:"soft"`
 			Moderate      int     `json:"moderate"`
