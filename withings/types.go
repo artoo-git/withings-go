@@ -42,7 +42,7 @@ type SerialzedMeas struct {
 	IntrH2o  	   []MeasureData
 	VisFat  	   []MeasureData
 	FatMassSeg     []MeasureData
-	MusMassSeg     []]MeasureData
+	MusMassSeg     []MeasureData
 	EDAfeet  	   []MeasureData
 	UnknowVals     []MeasureData
 }
