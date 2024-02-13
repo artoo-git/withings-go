@@ -252,6 +252,11 @@ func SerialMeas(mym *Measurement) (*SerialzedMeas, error) {
 	return sm, nil
 }
 
+type ActivityType struct {
+	Distance   float64   `json:"distance"`
+}
+
+
 // GetActivity call withings API Measure v2 - Getactivity. (https://developer.withings.com/oauth2/#operation/measurev2-getactivity)
 // startdate/enddate: Activity result start date, end date.
 // lastupdate : Timestamp for requesting data that were updated or created after this date. Use this instead of startdate+endate.
@@ -283,10 +288,6 @@ func (c *Client) GetActivity(startdate, enddate string, lastupdate int, offset i
 		return nil, err
 	}
 	return act, nil
-}
-
-type Activity struct {
-    Distance   float64   `json:"distance"` // Change the type to float64
 }
 
 // GetIntraDayAct call withings API Measure v2 - GetIntraDayActivity. (https://developer.withings.com/api-reference#operation/measurev2-getworkouts)
