@@ -285,6 +285,10 @@ func (c *Client) GetActivity(startdate, enddate string, lastupdate int, offset i
 	return act, nil
 }
 
+type Activity struct {
+    Distance   float64   `json:"distance"` // Change the type to float64
+}
+
 // GetIntraDayAct call withings API Measure v2 - GetIntraDayActivity. (https://developer.withings.com/api-reference#operation/measurev2-getworkouts)
 // startdate/enddate: Workouts result start date, end date.
 // lastupdate : Timestamp for requesting data that were updated or created after this date. Use this instead of startdate+endate.
