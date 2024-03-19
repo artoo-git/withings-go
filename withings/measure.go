@@ -252,10 +252,6 @@ func SerialMeas(mym *Measurement) (*SerialzedMeas, error) {
 	return sm, nil
 }
 
-type ActivityType struct {
-	Distance   float64   `json:"distance"`
-}
-
 
 // GetActivity call withings API Measure v2 - Getactivity. (https://developer.withings.com/oauth2/#operation/measurev2-getactivity)
 // startdate/enddate: Activity result start date, end date.
@@ -288,36 +284,6 @@ func (c *Client) GetActivity(startdate, enddate string, lastupdate int, offset i
 		return nil, err
 	}
 	return act, nil
-}
-
-// GetIntraDayAct call withings API Measure v2 - GetIntraDayActivity. (https://developer.withings.com/api-reference#operation/measurev2-getworkouts)
-// startdate/enddate: Workouts result start date, end date.
-// lastupdate : Timestamp for requesting data that were updated or created after this date. Use this instead of startdate+endate.
-//              If lastupdate is set to a timestamp other than Offsetbase, GetWorkouts will use lastupdate in preference to startdate/enddate.
-// offset: When a first call retuns more:1 and offset:XX, set value XX in this parameter to retrieve next available rows.
-// wtype: Workout Type. Set the workout type you want to get data. See WorkoutType in enum.go.
-func (c *Client) GetIntraDayAct(startdate, enddate string, iatype ...IntraDayActType) (*IntraDayAct, error) {
-	intradayact := new(IntraDayAct)
-
-	df, err := createDataFields(iatype)
-
-	var fp []FormParam = []FormParam{
-		{PPaction, IntraDayActA},
-		{PPoffset, fmt.Sprintf("%d", offset)},
-		{PPdataFields, df},
-	}
-
-	if startdate == "" || enddate == "" {
-		fp = append(fp, FormParam{PPlastupdate, fmt.Sprintf("%d", lastupdate)})
-	} else {
-		fp = append(fp, FormParam{PPstartdateymd, startdate}, FormParam{PPenddateymd, enddate})
-	}
-
-	err = reqAndParse(c, fp, c.MeasureURLv2, http.MethodPost, intradayact)
-	if err != nil {
-		return nil, err
-	}
-	return intradayact, nil
 }
 
 // GetWorkouts call withings API Measure v2 - Getworkouts. (https://developer.withings.com/api-reference#operation/measurev2-getworkouts)

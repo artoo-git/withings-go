@@ -90,13 +90,13 @@ type Activities struct {
 			IsTracker     bool    `json:"is_tracker"`
 			Steps         int     `json:"steps"`
 			Distance      float64 `json:"distance"`
-			Elevation     int     `json:"elevation"`
+			Elevation     float64 `json:"elevation"`
 			Soft          int     `json:"soft"`
 			Moderate      int     `json:"moderate"`
 			Intense       int     `json:"intense"`
 			Active        int     `json:"active"`
 			Calories      float64 `json:"calories"`
-			Totalcalories int     `json:"totalcalories"`
+			Totalcalories float64 `json:"totalcalories"`
 			HrAverage     float64 `json:"hr_average"`
 			HrMin         int     `json:"hr_min"`
 			HrMax         int     `json:"hr_max"`
